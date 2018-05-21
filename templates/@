@@ -1,0 +1,3 @@
+{% for item in dynamic_hosts %}
+"ip": "{{ ansible_default_ipv4.address }}"
+{% endfor %}

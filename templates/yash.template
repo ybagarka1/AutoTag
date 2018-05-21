@@ -1,0 +1,27 @@
+{
+"top_level": {
+    "name": "Integration",
+    "server_health": {
+      "total": "{{ total_server.stdout }}",
+      "healthy": "{{ total_healthy_servers.stdout }}",
+      "un_healthy": "{{ total_unhealthy_servers.stdout }}"
+    },
+  },
+  "detail_level": {
+    "ms_nodes": [
+      {
+    {% for i in item[0].split('\n') %}
+	"service name" : {{ i }}
+	  {% for item in groups['dynamic_groups'] %}
+        "details": [
+          {
+            "ip": "{{ item }}",
+          },
+		  {% endfor %}
+     {% endfor %}		  
+         
+       ]
+      }
+    ]
+  }
+}

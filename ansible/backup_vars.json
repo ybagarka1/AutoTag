@@ -1,0 +1,124 @@
+{
+	"data": [{
+		"serviceName": "dbcloning",
+		"stackName": "Integrationplatform-dbcloning-service",
+		"ip": ["172.28.48.153"],
+		"target": "HTTP:80/dbcloning/version",
+		"loadBalancer": "int-platformdbcloningservice",
+		"url": ["http://172.28.48.153/dbcloning"]
+	}, {
+		"serviceName": "webroot",
+		"stackName": "Integrationplatform-webroot-service",
+		"ip": ["172.28.48.172", "172.28.49.147"],
+		"target": "HTTP:80/webroot/version",
+		"loadBalancer": "intplatformwebrootservice",
+		"url": ["http://172.28.48.172/webroot", "http://172.28.49.147/webroot"]
+	}, {
+		"serviceName": "patching",
+		"stackName": "Integrationplatform-patching-service",
+		"ip": ["172.28.48.113", "172.28.49.188"],
+		"target": "HTTP:80/patching/version",
+		"loadBalancer": "intplatformpatchingservice",
+		"url": ["http://172.28.48.113/patching", "http://172.28.49.188/patching"]
+	}, {
+		"serviceName": "user-account",
+		"stackName": "Integrationplatform-user-account-service",
+		"ip": ["172.28.48.223", "172.28.49.120"],
+		"target": "HTTP:80/useraccount/version",
+		"loadBalancer": "intplatformuseraccountservice",
+		"url": ["http://172.28.48.223/useraccount", "http://172.28.49.120/useraccount"]
+	}, {
+		"serviceName": "sequence",
+		"stackName": "Integrationplatform-sequence-service",
+		"ip": ["172.28.48.124", "172.28.49.41"],
+		"target": "HTTP:80/sequence/version",
+		"loadBalancer": "intplatformsequenceservice",
+		"url": ["http://172.28.48.124/sequence", "http://172.28.49.41/sequence"]
+	}, {
+		"serviceName": "correlation-engine-samza",
+		"stackName": "Integrationplatform-correlation-engine-samza-service",
+		"ip": ["172.28.48.190", "172.28.49.247"],
+		"target": "HTTP:80/samza/version",
+		"loadBalancer": "int-samza-service",
+		"url": ["http://172.28.48.190/samza", "http://172.28.49.247/samza"]
+	}, {
+		"serviceName": "third-party-integration",
+		"stackName": "IntegrationPlatformThirdPartyIntegrationService",
+		"ip": ["172.28.48.175", "172.28.49.87"],
+		"target": "HTTP:80/third-party-integration/version",
+		"loadBalancer": "third-party-integration-elb",
+		"url": ["http://172.28.48.175/third-party-integration", "http://172.28.49.87/third-party-integration"]
+	}, 
+            {
+		"serviceName": "automation",
+		"stackName": "IntegrationAutomationEngineServiceCluster62",
+		"ip": ["172.28.48.9", "172.28.48.219", "172.28.49.142"],
+		"target": "HTTP:80/automationengine/version",
+		"loadBalancer": "Continuum-AE-Service-ELB-Int",
+		"url": ["http://172.28.48.9/automationengine", "http://172.28.48.219/automationengine", "http://172.28.49.142/automationengine"]
+	}, {
+		"serviceName": "profiling",
+		"stackName": "IntegrationProfilingServiceCluster60",
+		"ip": ["172.28.48.241", "172.28.49.108"],
+		"target": "HTTP:80/profiling/version",
+		"loadBalancer": "Continuum-Profiling-Service-Int",
+		"url": ["http://172.28.48.241/profiling", "http://172.28.49.108/profiling"]
+	}, {
+		"serviceName": "systemstate",
+		"stackName": "IntegrationSystemServiceCluster27",
+		"ip": ["172.28.48.167", "172.28.49.52"],
+		"target": "HTTP:80/systemstate/version",
+		"loadBalancer": "Continuum-SS1-Service-ELB-Int",
+		"url": ["http://172.28.48.167/systemstate", "http://172.28.49.52/systemstate"]
+	}, {
+		"serviceName": "scripting",
+		"stackName": "IntegrationSSService",
+		"ip": ["172.28.48.99", "172.28.49.32"],
+		"target": "HTTP:80/scripting/version",
+		"loadBalancer": "Continuum-SS-Service-ELB-Int",
+		"url": ["http://172.28.48.99/scripting", "http://172.28.49.32/scripting"]
+	}, {
+		"serviceName": "tasking",
+		"stackName": "IntegrationTSService",
+		"ip": ["172.28.48.184", "172.28.49.130"],
+		"target": "HTTP:80/tasking/version",
+		"loadBalancer": "Continuum-TS-Service-ELB-Int",
+		"url": ["http://172.28.48.184/tasking", "http://172.28.49.130/tasking"]
+	}, 
+	    {
+		"serviceName": "dynamicgroup",
+		"stackName": "IntegrationDGService164",
+		"ip": ["172.28.48.4", "172.28.49.218"],
+		"target": "HTTP:80/dg/version",
+		"loadBalancer": "Continuum-DG-Service-ELB-Int",
+		"url": ["http://172.28.48.4/dg", "http://172.28.49.218/dg"]
+	}, {
+		"serviceName": "correlation-engine",
+		"stackName": "IntegrationCEService188",
+		"ip": ["172.28.48.116", "172.28.48.226", "172.28.49.22", "172.28.49.217"],
+		"target": "HTTP:80/ce/version",
+		"loadBalancer": "Continuum-CE-Service-ELB-Int",
+		"url": ["http://172.28.48.116/ce", "http://172.28.48.226/ce", "http://172.28.49.22/ce", "http://172.28.49.217/ce"]
+	}, {
+		"serviceName": "performance",
+		"stackName": "IntegrationPerformanceMicroservice247",
+		"ip": ["172.28.48.179", "172.28.49.195"],
+		"target": "HTTP:80/performance/version",
+		"loadBalancer": "Continuum-Perf-Service-ELB-Int",
+		"url": ["http://172.28.48.179/performance", "http://172.28.49.195/performance"]
+	}, {
+		"serviceName": "agent",
+		"stackName": "IntegrationAgentMicroservice330",
+		"ip": ["172.28.48.142", "172.28.48.14", "172.28.49.200", "172.28.49.236"],
+		"target": "HTTP:80/agent/version",
+		"loadBalancer": "Continuum-Agent-Service-ELB-Int",
+		"url": ["http://172.28.48.142/agent", "http://172.28.48.14/agent", "http://172.28.49.200/agent", "http://172.28.49.236/agent"]
+	}, {
+		"serviceName": "asset",
+		"stackName": "IntegrationAssetMicroservice156",
+		"ip": ["172.28.48.74", "172.28.49.46"],
+		"target": "HTTP:80/asset/version",
+		"loadBalancer": "Continuum-Asset-Service-ELB-Int",
+		"url": ["http://172.28.48.74/asset", "http://172.28.49.46/asset"]
+	}]
+}

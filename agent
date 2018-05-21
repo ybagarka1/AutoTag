@@ -1,0 +1,9 @@
+{
+"service_name": "agent",
+"total": 4,
+"healthy": 4,
+"un_healthy": 0,
+"url": "http://internal-continuum-profiling-service-int-856030625.ap-south-1.elb.amazonaws.com",
+"details": [
+]
+}

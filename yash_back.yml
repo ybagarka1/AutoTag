@@ -1,0 +1,111 @@
+---
+- name: Creating the JSON file in required format
+  hosts: localhost
+  connection: local
+  any_errors_fatal: true
+  gather_facts: true
+  tasks:
+
+    - name: Get the existing cms-service Tag on stack
+      local_action: shell aws cloudformation describe-stacks --stack-name "{{ stackname }}" --query "Stacks[].{cmsservice:Tags[?Key=='cms-service']|[0].Value}"
+      register: service_name
+    - debug: msg="{{ service_name.stdout }}"
+
+    - name: Get the total number of servers in the stack
+      local_action: shell aws ec2 describe-instances --filters Name=tag:aws:cloudformation:stack-name,Values="{{ stackname }}" --query "Reservations[].Instances[].[PrivateIpAddress]" | wc -l
+      register: total_server
+    - debug: msg="{{ total_server.stdout }}"
+
+    - name: Get the total number of running servers in the stack
+      local_action: shell aws ec2 describe-instances --filters Name=tag:aws:cloudformation:stack-name,Values="{{ stackname }}" "Name=instance-state-name,Values=running" --query "Reservations[].Instances[].[PrivateIpAddress]" | wc -l
+      register: total_healthy_servers
+    - debug: msg="{{ total_healthy_servers.stdout }}"
+
+    - name: Get the total number of non running servers in the stack
+      local_action: shell aws ec2 describe-instances --filters Name=tag:aws:cloudformation:stack-name,Values="{{ stackname }}" "Name=instance-state-name,Values=stopped" --query "Reservations[].Instances[].[PrivateIpAddress]" | wc -l
+      register: total_unhealthy_servers
+    - debug: msg="{{ total_unhealthy_servers.stdout }}"
+
+#    - name: Generate the json output of header
+#      template:
+#        dest: "/home/jenkins/ansible_akshat/ice/kalim_ice/{{ service_name.stdout }}"
+#        src: "templates/microservices.template"
+
+    - name: Get the InstanceIPs
+      local_action: shell aws ec2 describe-instances --filters Name=tag:aws:cloudformation:stack-name,Values="{{ stackname }}" --query "Reservations[].Instances[].[PrivateIpAddress]"
+      register: ip
+    - name: Add Dynamic Ip's
+      add_host:
+        groups: dynamic_groups
+        hostname: "{{item}}"
+      with_items: ip.stdout_lines
+
+- hosts: dynamic_groups
+  become: yes
+  become_user: root
+  become_method: sudo
+  gather_facts: True
+  serial: 1
+  vars:
+    ansible_connection: "{{ connection_type }}"
+    ansible_ssh_user: "{{ ssh_user_name }}"
+    ansible_ssh_private_key_file: "{{ ssh_private_key_file }}"
+
+  tasks:
+
+    - name: Get the Instance Hostname
+      shell: hostname
+      register: server_name
+    - debug: msg="{{ server_name.stdout }}"
+
+    - name: Get the Instance Ipaddress
+      shell: hostname -I | cut -d' ' -f1
+   # - debug: var=ansible_default_ipv4.address
+      register: server_ip
+    - debug: msg="{{ server_ip.stdout }}"
+
+    - name: Get the Service URI from environment.sh
+      shell: cat environment.sh | grep -w "URLPrefix" | head -1 | awk -F "=" '{ print $2}' | awk -F '"' '{ print $2}'
+      register: service_uri
+    - debug: msg="{{ service_uri.stdout }}"
+
+    - name: Get the Service status on server
+      shell: curl -s 'http://{{ server_ip.stdout }}/{{ service_uri.stdout  }}/health' | python -c "import sys, json; print json.load(sys.stdin)['status'] "
+      register: service_status
+    - debug: msg="{{ service_status.stdout }}"
+
+    - name: Get the Cassandra Service status on server
+      shell: curl -s 'http://{{ server_ip.stdout }}/{{ service_uri.stdout  }}/health'  | python -c "import sys, json; print json.load(sys.stdin)['outboundConnectionStatus'][0]['connectionStatus'] "
+      register: cassandra_status
+    - debug: msg="{{ cassandra_status.stdout }}"
+
+    - name: Get the Kafka status on server
+      shell: curl -s 'http://{{ server_ip.stdout }}/{{ service_uri.stdout  }}/health'  | python -c "import sys, json; print json.load(sys.stdin)['outboundConnectionStatus'][1]['connectionStatus'] "
+      register: kafka_status
+    - debug: msg="{{ kafka_status.stdout }}"
+
+    - name: Get the Zookeeper status on server
+      shell: curl -s 'http://{{ server_ip.stdout }}/{{ service_uri.stdout  }}/health'  | python -c "import sys, json; print json.load(sys.stdin)['outboundConnectionStatus'][2]['connectionStatus'] "
+      register: zookeeper_status
+    - debug: msg="{{ zookeeper_status.stdout }}"
+
+    - name: Get the Service status on server
+      shell: curl -s 'http://{{ server_ip.stdout }}/{{ service_uri.stdout  }}/health' | python -c "import sys, json; print json.load(sys.stdin)['serviceVersion'] "
+      register: serviceVersion_status
+    - debug: msg="{{ serviceVersion_status.stdout }}"
+
+    - name: Get the build_number for the server
+      shell: curl -s 'http://{{ server_ip.stdout }}/{{ service_uri.stdout  }}/version' | python -c "import sys, json; print json.load(sys.stdin)['buildNumber'] "
+      register: buildNumber_status
+    - debug: msg="{{ buildNumber_status.stdout }}"
+
+    - name: Get the build_sha_commitid for the server
+      shell: curl -s 'http://{{ server_ip.stdout }}/{{ service_uri.stdout  }}/version' | python -c "import sys, json; print json.load(sys.stdin)['buildCommitSHA'] "
+      register: buildCommitSHA_status
+    - debug: msg="{{ buildCommitSHA_status.stdout }}"
+
+    - name: Generate the json output of nodes
+      template:
+        dest: "/home/jenkins/ansible_akshat/ice/kalim_ice/yash_int.json"
+        src: "templates/yash.template"
+

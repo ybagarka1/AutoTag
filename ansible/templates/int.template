@@ -1,0 +1,54 @@
+{
+  "top_level": {
+    "name": "Production",
+    "ms_health": {
+      "total": 10,
+      "healthy": 5,
+      "un_healthy": 4
+    },
+    "server_health": {
+      "total": "total_server.stdout",
+      "healthy": "total_healthy_servers.stdout",
+      "un_healthy": "total_unhealthy_servers.stdout"
+    },
+    "last_updated": "Wed May 9 10:27:00 UTC 2018"
+  },
+  "detail_level": {
+"ms_nodes": [
+{%- for a in data -%}
+{
+"service_name": "{{ a.serviceName }}",
+	"total": "totalms",
+	"healthy": 1,
+	"un_healthy": 1,
+	"url": "{{ a.loadBalancer }}",
+	 	"details": [
+			{% for b in a.ip %}
+				{
+				"ip": "{{ b }}",
+               	                "connectivity_cassandra": "Active",
+		                "connectivity_kafka": "Active",
+               		        "connectivity_zookeeper": "StateHasSession",
+		                "version": "v1.0",
+				"build_number": 425,
+				"build_sha": "f751abbad3f375919560d52ecb65dd60d472237e"
+			}
+			{%- if not loop.last -%}
+			{%- raw -%}
+			,		
+			{%- endraw -%}			
+			{%- endif -%}
+			{%- endfor -%}
+{%- if loop.last -%}
+{%- raw -%}
+]}
+{%- endraw -%}
+{% else %}
+{%- raw -%}
+]},
+{%- endraw -%}
+{% endif %}
+{%- endfor -%}
+]
+}
+}

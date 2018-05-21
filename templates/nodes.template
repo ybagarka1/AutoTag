@@ -1,0 +1,11 @@
+{
+"server_name": "{{ server_name.stdout }}",
+"ip": "{{ server_ip.stdout }}",
+"status": "{{ service_status.stdout }}",
+"connectivity_cassandra": "{{ cassandra_status.stdout }}",
+"connectivity_kafka": "{{ kafka_status.stdout }}",
+"connectivity_zookeeper": "{{ zookeeper_status.stdout }}",
+"version": "{{ serviceVersion_status.stdout }}",
+"build_number": "{{ buildNumber_status.stdout }}",
+"build_sha": "{{ buildCommitSHA_status.stdout }}"
+}

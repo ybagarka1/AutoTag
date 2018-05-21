@@ -1,0 +1,9 @@
+{
+"service_name": "{{ service_name.stdout }}",
+"total": {{ total_server.stdout }},
+"healthy": {{ total_healthy_servers.stdout }},
+"un_healthy": {{ total_unhealthy_servers.stdout }},
+"url": "http://internal-continuum-profiling-service-int-856030625.ap-south-1.elb.amazonaws.com",
+"details": [
+]
+}

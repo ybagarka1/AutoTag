@@ -1,0 +1,51 @@
+---
+- name: Creating the JSON file in required format
+  hosts: localhost
+  connection: local
+  any_errors_fatal: true
+  gather_facts: true
+  tasks:
+
+    - name: Get the existing cms-service Tag on stack
+      local_action: shell aws cloudformation describe-stacks --stack-name "{{ stackname }}" --query "Stacks[].{cmsservice:Tags[?Key=='cms-service']|[0].Value}"
+      register: service_name
+    - debug: msg="{{ service_name.stdout }}"
+
+    - name: Get the total number of servers in the stack
+      local_action: shell aws ec2 describe-instances --filters Name=tag:aws:cloudformation:stack-name,Values="{{ stackname }}" --query "Reservations[].Instances[].[PrivateIpAddress]" | wc -l
+      register: total_server
+    - debug: msg="{{ total_server.stdout }}"
+
+    - name: Get the total number of running servers in the stack
+      local_action: shell aws ec2 describe-instances --filters Name=tag:aws:cloudformation:stack-name,Values="{{ stackname }}" "Name=instance-state-name,Values=running" --query "Reservations[].Instances[].[PrivateIpAddress]" | wc -l
+      register: total_healthy_servers
+    - debug: msg="{{ total_healthy_servers.stdout }}"
+
+    - name: Get the total number of non running servers in the stack
+      local_action: shell aws ec2 describe-instances --filters Name=tag:aws:cloudformation:stack-name,Values="{{ stackname }}" "Name=instance-state-name,Values=stopped" --query "Reservations[].Instances[].[PrivateIpAddress]" | wc -l
+      register: total_unhealthy_servers
+    - debug: msg="{{ total_unhealthy_servers.stdout }}"
+
+#    - name: Generate the json output of header
+#      template:
+#        dest: "/home/jenkins/ansible_akshat/ice/kalim_ice/{{ service_name.stdout }}"
+#        src: "templates/microservices.template"
+
+    - name: Get the InstanceIPs
+      local_action: shell aws ec2 describe-instances --filters Name=tag:aws:cloudformation:stack-name,Values="{{ stackname }}" --query "Reservations[].Instances[].[PrivateIpAddress]"
+      register: ip
+      
+    - debug: msg={{ ip.stdout }}
+
+    - name: Adding to the temporary group
+      add_host:
+        groups: dynamic_groups
+        hostname: "{{ item }}"
+      with_items:  ip.stdout_lines  
+
+    - template: 
+        src: "templates/yash.template"
+        dest: "/tmp/yash_int.json"
+      delegate_to: localhost
+      with_nested:
+        - stackname 
