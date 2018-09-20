@@ -1,0 +1,663 @@
+{
+  "top_level": {
+    "name": "Integration",
+    "ms_health": {
+      "total": 10,
+      "healthy": 5,
+      "un_healthy": 4
+    },
+    "server_health": {
+      "total": "total_server.stdout",
+      "healthy": "total_healthy_servers.stdout",
+      "un_healthy": "total_unhealthy_servers.stdout"
+    },
+    "last_updated": "Wed May 9 10:27:00 UTC 2018"
+  },
+  "detail_level": {
+"ms_nodes": [{
+"service_name": "dev_aws-autoscaling-ice-151",
+	"total": "totalms",
+	"healthy": 1,
+	"un_healthy": 1,
+	"url": "http://localhost/",
+	 	"details": [
+							{
+				"ip": "[]",
+               	                "connectivity_cassandra": "[u'n']",
+		                "connectivity_kafka": "[u'n']",
+               		        "connectivity_zookeeper": "[u'n']",
+		                "version": "[u'n']",
+				"build_number": "[u'n']",
+				"build_sha": "f751abbad3f375919560d52ecb65dd60d472237e"
+			}]},{
+"service_name": "dev_cloud-monitoring-service",
+	"total": "totalms",
+	"healthy": 1,
+	"un_healthy": 1,
+	"url": "http://localhost/",
+	 	"details": [
+							{
+				"ip": "['172.28.48.26'",
+               	                "connectivity_cassandra": "[u'Active']",
+		                "connectivity_kafka": "[u'NA']",
+               		        "connectivity_zookeeper": "[u'NA']",
+		                "version": "[u'v1']",
+				"build_number": "[u'1']",
+				"build_sha": "f751abbad3f375919560d52ecb65dd60d472237e"
+			},				{
+				"ip": " '172.28.49.26']",
+               	                "connectivity_cassandra": "[u'Active']",
+		                "connectivity_kafka": "[u'NA']",
+               		        "connectivity_zookeeper": "[u'NA']",
+		                "version": "[u'v1']",
+				"build_number": "[u'1']",
+				"build_sha": "f751abbad3f375919560d52ecb65dd60d472237e"
+			}]},{
+"service_name": "dev_platform-agent-service",
+	"total": "totalms",
+	"healthy": 1,
+	"un_healthy": 1,
+	"url": "http://localhost/",
+	 	"details": [
+							{
+				"ip": "['172.28.49.184'",
+               	                "connectivity_cassandra": "[u'503']",
+		                "connectivity_kafka": "[u'503']",
+               		        "connectivity_zookeeper": "[u'503']",
+		                "version": "[u'v1']",
+				"build_number": "[u'503']",
+				"build_sha": "f751abbad3f375919560d52ecb65dd60d472237e"
+			},				{
+				"ip": " '172.28.48.208'",
+               	                "connectivity_cassandra": "[u'503']",
+		                "connectivity_kafka": "[u'503']",
+               		        "connectivity_zookeeper": "[u'503']",
+		                "version": "[u'v1']",
+				"build_number": "[u'503']",
+				"build_sha": "f751abbad3f375919560d52ecb65dd60d472237e"
+			},				{
+				"ip": " '172.28.49.133'",
+               	                "connectivity_cassandra": "[u'Active']",
+		                "connectivity_kafka": "[u'Active']",
+               		        "connectivity_zookeeper": "[u'StateHasSession']",
+		                "version": "[u'v1']",
+				"build_number": "[u'057f8e4cf703d29e1c7cefa4b31e413e2c01bfc0']",
+				"build_sha": "f751abbad3f375919560d52ecb65dd60d472237e"
+			},				{
+				"ip": " '172.28.48.50']",
+               	                "connectivity_cassandra": "[u'Active']",
+		                "connectivity_kafka": "[u'Active']",
+               		        "connectivity_zookeeper": "[u'StateHasSession']",
+		                "version": "[u'v1']",
+				"build_number": "[u'057f8e4cf703d29e1c7cefa4b31e413e2c01bfc0']",
+				"build_sha": "f751abbad3f375919560d52ecb65dd60d472237e"
+			}]},{
+"service_name": "dev_platform-asset-service",
+	"total": "totalms",
+	"healthy": 1,
+	"un_healthy": 1,
+	"url": "http://localhost/",
+	 	"details": [
+							{
+				"ip": "['172.28.48.74'",
+               	                "connectivity_cassandra": "[u'Active']",
+		                "connectivity_kafka": "[u'Active']",
+               		        "connectivity_zookeeper": "[u'StateHasSession']",
+		                "version": "[u'v1']",
+				"build_number": "[u'01da9428c7b9b612d71333bf6bed7e677ecbd7cc']",
+				"build_sha": "f751abbad3f375919560d52ecb65dd60d472237e"
+			},				{
+				"ip": " '172.28.49.46']",
+               	                "connectivity_cassandra": "[u'Active']",
+		                "connectivity_kafka": "[u'Active']",
+               		        "connectivity_zookeeper": "[u'StateHasSession']",
+		                "version": "[u'v1']",
+				"build_number": "[u'01da9428c7b9b612d71333bf6bed7e677ecbd7cc']",
+				"build_sha": "f751abbad3f375919560d52ecb65dd60d472237e"
+			}]},{
+"service_name": "dev_platform-automation-engine",
+	"total": "totalms",
+	"healthy": 1,
+	"un_healthy": 1,
+	"url": "http://localhost/",
+	 	"details": [
+							{
+				"ip": "['172.28.48.9'",
+               	                "connectivity_cassandra": "[u'503']",
+		                "connectivity_kafka": "[u'503']",
+               		        "connectivity_zookeeper": "[u'503']",
+		                "version": "[u'v1']",
+				"build_number": "[u'503']",
+				"build_sha": "f751abbad3f375919560d52ecb65dd60d472237e"
+			},				{
+				"ip": " '172.28.48.219'",
+               	                "connectivity_cassandra": "[u'Active']",
+		                "connectivity_kafka": "[u'Active']",
+               		        "connectivity_zookeeper": "[u'503']",
+		                "version": "[u'v1']",
+				"build_number": "[u'439ff05dcae518bd4b1dff799edb068d5c9a17e6']",
+				"build_sha": "f751abbad3f375919560d52ecb65dd60d472237e"
+			},				{
+				"ip": " '172.28.49.142']",
+               	                "connectivity_cassandra": "[u'503']",
+		                "connectivity_kafka": "[u'503']",
+               		        "connectivity_zookeeper": "[u'503']",
+		                "version": "[u'v1']",
+				"build_number": "[u'503']",
+				"build_sha": "f751abbad3f375919560d52ecb65dd60d472237e"
+			}]},{
+"service_name": "dev_platform-billing-service",
+	"total": "totalms",
+	"healthy": 1,
+	"un_healthy": 1,
+	"url": "http://localhost/",
+	 	"details": [
+							{
+				"ip": "['172.28.48.123'",
+               	                "connectivity_cassandra": "[u'503']",
+		                "connectivity_kafka": "[u'503']",
+               		        "connectivity_zookeeper": "[u'503']",
+		                "version": "[u'v1']",
+				"build_number": "[u'164']",
+				"build_sha": "f751abbad3f375919560d52ecb65dd60d472237e"
+			},				{
+				"ip": " '172.28.49.6']",
+               	                "connectivity_cassandra": "[u'503']",
+		                "connectivity_kafka": "[u'503']",
+               		        "connectivity_zookeeper": "[u'503']",
+		                "version": "[u'v1']",
+				"build_number": "[u'164']",
+				"build_sha": "f751abbad3f375919560d52ecb65dd60d472237e"
+			}]},{
+"service_name": "dev_platform-correlation-engine-samza-service",
+	"total": "totalms",
+	"healthy": 1,
+	"un_healthy": 1,
+	"url": "http://localhost/",
+	 	"details": [
+							{
+				"ip": "['172.28.48.190'",
+               	                "connectivity_cassandra": "[u'503']",
+		                "connectivity_kafka": "[u'503']",
+               		        "connectivity_zookeeper": "[u'503']",
+		                "version": "[u'v1']",
+				"build_number": "[u'503']",
+				"build_sha": "f751abbad3f375919560d52ecb65dd60d472237e"
+			},				{
+				"ip": " '172.28.49.247']",
+               	                "connectivity_cassandra": "[u'503']",
+		                "connectivity_kafka": "[u'503']",
+               		        "connectivity_zookeeper": "[u'503']",
+		                "version": "[u'v1']",
+				"build_number": "[u'503']",
+				"build_sha": "f751abbad3f375919560d52ecb65dd60d472237e"
+			}]},{
+"service_name": "dev_platform-correlation-engine-service",
+	"total": "totalms",
+	"healthy": 1,
+	"un_healthy": 1,
+	"url": "http://localhost/",
+	 	"details": [
+							{
+				"ip": "['172.28.48.21'",
+               	                "connectivity_cassandra": "[u'503']",
+		                "connectivity_kafka": "[u'503']",
+               		        "connectivity_zookeeper": "[u'503']",
+		                "version": "[u'v1']",
+				"build_number": "[u'503']",
+				"build_sha": "f751abbad3f375919560d52ecb65dd60d472237e"
+			},				{
+				"ip": " '172.28.49.217']",
+               	                "connectivity_cassandra": "[u'503']",
+		                "connectivity_kafka": "[u'503']",
+               		        "connectivity_zookeeper": "[u'503']",
+		                "version": "[u'v1']",
+				"build_number": "[u'503']",
+				"build_sha": "f751abbad3f375919560d52ecb65dd60d472237e"
+			}]},{
+"service_name": "dev_platform-dbcloning-service",
+	"total": "totalms",
+	"healthy": 1,
+	"un_healthy": 1,
+	"url": "http://localhost/",
+	 	"details": [
+							{
+				"ip": "['172.28.48.153']",
+               	                "connectivity_cassandra": "[u'503']",
+		                "connectivity_kafka": "[u'503']",
+               		        "connectivity_zookeeper": "[u'503']",
+		                "version": "[u'v1']",
+				"build_number": "[u'503']",
+				"build_sha": "f751abbad3f375919560d52ecb65dd60d472237e"
+			}]},{
+"service_name": "dev_platform-entitlement-service",
+	"total": "totalms",
+	"healthy": 1,
+	"un_healthy": 1,
+	"url": "http://localhost/",
+	 	"details": [
+							{
+				"ip": "['172.28.48.231'",
+               	                "connectivity_cassandra": "[u'Active']",
+		                "connectivity_kafka": "[u'Active']",
+               		        "connectivity_zookeeper": "[u'503']",
+		                "version": "[u'v1']",
+				"build_number": "[u'117']",
+				"build_sha": "f751abbad3f375919560d52ecb65dd60d472237e"
+			},				{
+				"ip": " '172.28.49.216']",
+               	                "connectivity_cassandra": "[u'Active']",
+		                "connectivity_kafka": "[u'Active']",
+               		        "connectivity_zookeeper": "[u'503']",
+		                "version": "[u'v1']",
+				"build_number": "[u'117']",
+				"build_sha": "f751abbad3f375919560d52ecb65dd60d472237e"
+			}]},{
+"service_name": "dev_platform-itsm-integration-service",
+	"total": "totalms",
+	"healthy": 1,
+	"un_healthy": 1,
+	"url": "http://localhost/",
+	 	"details": [
+							{
+				"ip": "['172.28.48.206'",
+               	                "connectivity_cassandra": "[u'Active']",
+		                "connectivity_kafka": "[u'Active']",
+               		        "connectivity_zookeeper": "[u'503']",
+		                "version": "[u'v1']",
+				"build_number": "[u'77']",
+				"build_sha": "f751abbad3f375919560d52ecb65dd60d472237e"
+			},				{
+				"ip": " '172.28.49.189']",
+               	                "connectivity_cassandra": "[u'Active']",
+		                "connectivity_kafka": "[u'Active']",
+               		        "connectivity_zookeeper": "[u'503']",
+		                "version": "[u'v1']",
+				"build_number": "[u'77']",
+				"build_sha": "f751abbad3f375919560d52ecb65dd60d472237e"
+			}]},{
+"service_name": "dev_platform-partner-service",
+	"total": "totalms",
+	"healthy": 1,
+	"un_healthy": 1,
+	"url": "http://localhost/",
+	 	"details": [
+							{
+				"ip": "['172.28.49.19'",
+               	                "connectivity_cassandra": "[u'Active']",
+		                "connectivity_kafka": "[u'Unavailable']",
+               		        "connectivity_zookeeper": "[u'503']",
+		                "version": "[u'v1']",
+				"build_number": "[u'32']",
+				"build_sha": "f751abbad3f375919560d52ecb65dd60d472237e"
+			},				{
+				"ip": " '172.28.48.166']",
+               	                "connectivity_cassandra": "[u'Active']",
+		                "connectivity_kafka": "[u'Unavailable']",
+               		        "connectivity_zookeeper": "[u'503']",
+		                "version": "[u'v1']",
+				"build_number": "[u'32']",
+				"build_sha": "f751abbad3f375919560d52ecb65dd60d472237e"
+			}]},{
+"service_name": "dev_platform-patching-service",
+	"total": "totalms",
+	"healthy": 1,
+	"un_healthy": 1,
+	"url": "http://localhost/",
+	 	"details": [
+							{
+				"ip": "['172.28.49.188'",
+               	                "connectivity_cassandra": "[u'Active']",
+		                "connectivity_kafka": "[u'Active']",
+               		        "connectivity_zookeeper": "[u'503']",
+		                "version": "[u'v1']",
+				"build_number": "[u'316']",
+				"build_sha": "f751abbad3f375919560d52ecb65dd60d472237e"
+			},				{
+				"ip": " '172.28.48.113']",
+               	                "connectivity_cassandra": "[u'Active']",
+		                "connectivity_kafka": "[u'Active']",
+               		        "connectivity_zookeeper": "[u'503']",
+		                "version": "[u'v1']",
+				"build_number": "[u'316']",
+				"build_sha": "f751abbad3f375919560d52ecb65dd60d472237e"
+			}]},{
+"service_name": "dev_platform-performance-service",
+	"total": "totalms",
+	"healthy": 1,
+	"un_healthy": 1,
+	"url": "http://localhost/",
+	 	"details": [
+							{
+				"ip": "['172.28.49.195'",
+               	                "connectivity_cassandra": "[u'503']",
+		                "connectivity_kafka": "[u'503']",
+               		        "connectivity_zookeeper": "[u'503']",
+		                "version": "[u'v1']",
+				"build_number": "[u'503']",
+				"build_sha": "f751abbad3f375919560d52ecb65dd60d472237e"
+			},				{
+				"ip": " '172.28.48.179']",
+               	                "connectivity_cassandra": "[u'503']",
+		                "connectivity_kafka": "[u'503']",
+               		        "connectivity_zookeeper": "[u'503']",
+		                "version": "[u'v1']",
+				"build_number": "[u'503']",
+				"build_sha": "f751abbad3f375919560d52ecb65dd60d472237e"
+			}]},{
+"service_name": "dev_platform-profiling-service",
+	"total": "totalms",
+	"healthy": 1,
+	"un_healthy": 1,
+	"url": "http://localhost/",
+	 	"details": [
+							{
+				"ip": "['172.28.48.241'",
+               	                "connectivity_cassandra": "[u'Active']",
+		                "connectivity_kafka": "[u'503']",
+               		        "connectivity_zookeeper": "[u'503']",
+		                "version": "[u'v1']",
+				"build_number": "[u'958']",
+				"build_sha": "f751abbad3f375919560d52ecb65dd60d472237e"
+			},				{
+				"ip": " '172.28.49.108']",
+               	                "connectivity_cassandra": "[u'Active']",
+		                "connectivity_kafka": "[u'503']",
+               		        "connectivity_zookeeper": "[u'503']",
+		                "version": "[u'v1']",
+				"build_number": "[u'958']",
+				"build_sha": "f751abbad3f375919560d52ecb65dd60d472237e"
+			}]},{
+"service_name": "dev_platform-psa-datasync-service",
+	"total": "totalms",
+	"healthy": 1,
+	"un_healthy": 1,
+	"url": "http://localhost/",
+	 	"details": [
+							{
+				"ip": "['172.28.48.233'",
+               	                "connectivity_cassandra": "[u'Active']",
+		                "connectivity_kafka": "[u'503']",
+               		        "connectivity_zookeeper": "[u'503']",
+		                "version": "[u'v1']",
+				"build_number": "[u'56']",
+				"build_sha": "f751abbad3f375919560d52ecb65dd60d472237e"
+			},				{
+				"ip": " '172.28.49.40']",
+               	                "connectivity_cassandra": "[u'Active']",
+		                "connectivity_kafka": "[u'503']",
+               		        "connectivity_zookeeper": "[u'503']",
+		                "version": "[u'v1']",
+				"build_number": "[u'56']",
+				"build_sha": "f751abbad3f375919560d52ecb65dd60d472237e"
+			}]},{
+"service_name": "dev_platform-realtime-service",
+	"total": "totalms",
+	"healthy": 1,
+	"un_healthy": 1,
+	"url": "http://localhost/",
+	 	"details": [
+							{
+				"ip": "['172.28.49.234'",
+               	                "connectivity_cassandra": "[u'Active']",
+		                "connectivity_kafka": "[u'503']",
+               		        "connectivity_zookeeper": "[u'503']",
+		                "version": "[u'v1']",
+				"build_number": "[u'ae84deea93eb86e97876e7283e7e17f185102cdf']",
+				"build_sha": "f751abbad3f375919560d52ecb65dd60d472237e"
+			},				{
+				"ip": " '172.28.48.37']",
+               	                "connectivity_cassandra": "[u'Active']",
+		                "connectivity_kafka": "[u'503']",
+               		        "connectivity_zookeeper": "[u'503']",
+		                "version": "[u'v1']",
+				"build_number": "[u'ae84deea93eb86e97876e7283e7e17f185102cdf']",
+				"build_sha": "f751abbad3f375919560d52ecb65dd60d472237e"
+			}]},{
+"service_name": "dev_platform-rmm-dynamicgroup-service",
+	"total": "totalms",
+	"healthy": 1,
+	"un_healthy": 1,
+	"url": "http://localhost/",
+	 	"details": [
+							{
+				"ip": "['172.28.48.4'",
+               	                "connectivity_cassandra": "[u'Active']",
+		                "connectivity_kafka": "[u'Active']",
+               		        "connectivity_zookeeper": "[u'503']",
+		                "version": "[u'v1']",
+				"build_number": "[u'498']",
+				"build_sha": "f751abbad3f375919560d52ecb65dd60d472237e"
+			},				{
+				"ip": " '172.28.49.218']",
+               	                "connectivity_cassandra": "[u'Active']",
+		                "connectivity_kafka": "[u'Active']",
+               		        "connectivity_zookeeper": "[u'503']",
+		                "version": "[u'v1']",
+				"build_number": "[u'498']",
+				"build_sha": "f751abbad3f375919560d52ecb65dd60d472237e"
+			}]},{
+"service_name": "dev_platform-scripting-service",
+	"total": "totalms",
+	"healthy": 1,
+	"un_healthy": 1,
+	"url": "http://localhost/",
+	 	"details": [
+							{
+				"ip": "['172.28.48.99'",
+               	                "connectivity_cassandra": "[u'Active']",
+		                "connectivity_kafka": "[u'Active']",
+               		        "connectivity_zookeeper": "[u'503']",
+		                "version": "[u'v1']",
+				"build_number": "[u'271']",
+				"build_sha": "f751abbad3f375919560d52ecb65dd60d472237e"
+			},				{
+				"ip": " '172.28.49.32']",
+               	                "connectivity_cassandra": "[u'Active']",
+		                "connectivity_kafka": "[u'Active']",
+               		        "connectivity_zookeeper": "[u'503']",
+		                "version": "[u'v1']",
+				"build_number": "[u'271']",
+				"build_sha": "f751abbad3f375919560d52ecb65dd60d472237e"
+			}]},{
+"service_name": "dev_platform-sequence-service",
+	"total": "totalms",
+	"healthy": 1,
+	"un_healthy": 1,
+	"url": "http://localhost/",
+	 	"details": [
+							{
+				"ip": "['172.28.48.124'",
+               	                "connectivity_cassandra": "[u'Active']",
+		                "connectivity_kafka": "[u'Active']",
+               		        "connectivity_zookeeper": "[u'503']",
+		                "version": "[u'v1']",
+				"build_number": "[u'324']",
+				"build_sha": "f751abbad3f375919560d52ecb65dd60d472237e"
+			},				{
+				"ip": " '172.28.49.41']",
+               	                "connectivity_cassandra": "[u'Active']",
+		                "connectivity_kafka": "[u'Active']",
+               		        "connectivity_zookeeper": "[u'503']",
+		                "version": "[u'v1']",
+				"build_number": "[u'324']",
+				"build_sha": "f751abbad3f375919560d52ecb65dd60d472237e"
+			}]},{
+"service_name": "dev_platform-systemstate-service",
+	"total": "totalms",
+	"healthy": 1,
+	"un_healthy": 1,
+	"url": "http://localhost/",
+	 	"details": [
+							{
+				"ip": "['172.28.48.167'",
+               	                "connectivity_cassandra": "[u'Active']",
+		                "connectivity_kafka": "[u'Active']",
+               		        "connectivity_zookeeper": "[u'503']",
+		                "version": "[u'v1']",
+				"build_number": "[u'bdd4dcb48ec42cd664043ffe2702daea873123de']",
+				"build_sha": "f751abbad3f375919560d52ecb65dd60d472237e"
+			},				{
+				"ip": " '172.28.49.52']",
+               	                "connectivity_cassandra": "[u'Active']",
+		                "connectivity_kafka": "[u'Active']",
+               		        "connectivity_zookeeper": "[u'503']",
+		                "version": "[u'v1']",
+				"build_number": "[u'bdd4dcb48ec42cd664043ffe2702daea873123de']",
+				"build_sha": "f751abbad3f375919560d52ecb65dd60d472237e"
+			}]},{
+"service_name": "dev_platform-tasking-service",
+	"total": "totalms",
+	"healthy": 1,
+	"un_healthy": 1,
+	"url": "http://localhost/",
+	 	"details": [
+							{
+				"ip": "['172.28.48.184'",
+               	                "connectivity_cassandra": "[u'Active']",
+		                "connectivity_kafka": "[u'Active']",
+               		        "connectivity_zookeeper": "[u'503']",
+		                "version": "[u'v1']",
+				"build_number": "[u'596']",
+				"build_sha": "f751abbad3f375919560d52ecb65dd60d472237e"
+			},				{
+				"ip": " '172.28.49.130']",
+               	                "connectivity_cassandra": "[u'Active']",
+		                "connectivity_kafka": "[u'Active']",
+               		        "connectivity_zookeeper": "[u'503']",
+		                "version": "[u'v1']",
+				"build_number": "[u'596']",
+				"build_sha": "f751abbad3f375919560d52ecb65dd60d472237e"
+			}]},{
+"service_name": "dev_platform-third-party-integration-service",
+	"total": "totalms",
+	"healthy": 1,
+	"un_healthy": 1,
+	"url": "http://localhost/",
+	 	"details": [
+							{
+				"ip": "['172.28.49.87'",
+               	                "connectivity_cassandra": "[u'503']",
+		                "connectivity_kafka": "[u'503']",
+               		        "connectivity_zookeeper": "[u'503']",
+		                "version": "[u'v1']",
+				"build_number": "[u'503']",
+				"build_sha": "f751abbad3f375919560d52ecb65dd60d472237e"
+			},				{
+				"ip": " '172.28.48.175']",
+               	                "connectivity_cassandra": "[u'503']",
+		                "connectivity_kafka": "[u'503']",
+               		        "connectivity_zookeeper": "[u'503']",
+		                "version": "[u'v1']",
+				"build_number": "[u'503']",
+				"build_sha": "f751abbad3f375919560d52ecb65dd60d472237e"
+			}]},{
+"service_name": "dev_platform-user-account-service",
+	"total": "totalms",
+	"healthy": 1,
+	"un_healthy": 1,
+	"url": "http://localhost/",
+	 	"details": [
+							{
+				"ip": "['172.28.48.223'",
+               	                "connectivity_cassandra": "[u'Active']",
+		                "connectivity_kafka": "[u'503']",
+               		        "connectivity_zookeeper": "[u'503']",
+		                "version": "[u'v1']",
+				"build_number": "[u'145']",
+				"build_sha": "f751abbad3f375919560d52ecb65dd60d472237e"
+			},				{
+				"ip": " '172.28.49.120']",
+               	                "connectivity_cassandra": "[u'Active']",
+		                "connectivity_kafka": "[u'503']",
+               		        "connectivity_zookeeper": "[u'503']",
+		                "version": "[u'v1']",
+				"build_number": "[u'145']",
+				"build_sha": "f751abbad3f375919560d52ecb65dd60d472237e"
+			}]},{
+"service_name": "dev_platform-webroot-service",
+	"total": "totalms",
+	"healthy": 1,
+	"un_healthy": 1,
+	"url": "http://localhost/",
+	 	"details": [
+							{
+				"ip": "['172.28.49.147'",
+               	                "connectivity_cassandra": "[u'Active']",
+		                "connectivity_kafka": "[u'503']",
+               		        "connectivity_zookeeper": "[u'503']",
+		                "version": "[u'v1']",
+				"build_number": "[u'328']",
+				"build_sha": "f751abbad3f375919560d52ecb65dd60d472237e"
+			},				{
+				"ip": " '172.28.48.172']",
+               	                "connectivity_cassandra": "[u'Active']",
+		                "connectivity_kafka": "[u'503']",
+               		        "connectivity_zookeeper": "[u'503']",
+		                "version": "[u'v1']",
+				"build_number": "[u'328']",
+				"build_sha": "f751abbad3f375919560d52ecb65dd60d472237e"
+			}]},{
+"service_name": "dev_security-portal-service",
+	"total": "totalms",
+	"healthy": 1,
+	"un_healthy": 1,
+	"url": "http://localhost/",
+	 	"details": [
+							{
+				"ip": "['172.28.49.77'",
+               	                "connectivity_cassandra": "[u'Active']",
+		                "connectivity_kafka": "[u'503']",
+               		        "connectivity_zookeeper": "[u'503']",
+		                "version": "[u'1.2']",
+				"build_number": "[u'']",
+				"build_sha": "f751abbad3f375919560d52ecb65dd60d472237e"
+			},				{
+				"ip": " '172.28.48.235']",
+               	                "connectivity_cassandra": "[u'Active']",
+		                "connectivity_kafka": "[u'503']",
+               		        "connectivity_zookeeper": "[u'503']",
+		                "version": "[u'1.2']",
+				"build_number": "[u'']",
+				"build_sha": "f751abbad3f375919560d52ecb65dd60d472237e"
+			}]},{
+"service_name": "dev_self-service-deployment-pipeline",
+	"total": "totalms",
+	"healthy": 1,
+	"un_healthy": 1,
+	"url": "http://localhost/",
+	 	"details": [
+							{
+				"ip": "['172.28.48.13']",
+               	                "connectivity_cassandra": "[u'503']",
+		                "connectivity_kafka": "[u'503']",
+               		        "connectivity_zookeeper": "[u'503']",
+		                "version": "[u'1.2']",
+				"build_number": "[u'503']",
+				"build_sha": "f751abbad3f375919560d52ecb65dd60d472237e"
+			}]},{
+"service_name": "dev_self-service-testvikrant",
+	"total": "totalms",
+	"healthy": 1,
+	"un_healthy": 1,
+	"url": "http://localhost/",
+	 	"details": [
+							{
+				"ip": "['172.28.49.192'",
+               	                "connectivity_cassandra": "[u'503']",
+		                "connectivity_kafka": "[u'503']",
+               		        "connectivity_zookeeper": "[u'503']",
+		                "version": "[u'1.2']",
+				"build_number": "[u'503']",
+				"build_sha": "f751abbad3f375919560d52ecb65dd60d472237e"
+			},				{
+				"ip": " '172.28.48.27']",
+               	                "connectivity_cassandra": "[u'503']",
+		                "connectivity_kafka": "[u'503']",
+               		        "connectivity_zookeeper": "[u'503']",
+		                "version": "[u'1.2']",
+				"build_number": "[u'503']",
+				"build_sha": "f751abbad3f375919560d52ecb65dd60d472237e"
+			}]}]
+}
+}

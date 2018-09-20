@@ -1,0 +1,12 @@
+---
+- name: Integration pulse
+  hosts: localhost
+  gather_facts: true
+  tasks:
+    - include_vars: int_vars.json
+    
+    - template:
+        src: templates/int.template
+        dest: tmp/int.json
+      with_nested:
+        - data 
